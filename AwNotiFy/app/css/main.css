@@ -1,0 +1,201 @@
+@import 'fonts.css';
+body{
+  background-color: #333;
+}
+.d-none{
+  display: none;
+}
+.body{
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  min-height: 700px;
+  background-color: #fff;
+  position: relative;
+  padding-bottom: 50px;
+}
+.nv_r{
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  position: sticky;
+  /* padding-right: 120px; */
+  z-index: 99;
+  top: 0;
+  left: 0;
+}
+.ip_r{
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  position: relative;
+}
+.bt_r{
+  width: 120px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: teal;
+  display: none;
+}
+.contenedor_input{
+  height: 100%!important;
+  position: relative;
+}
+.inputsearch{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 100%;
+}
+.contenedor_input input{
+  height: 60px!important;
+  border: 0!important;
+  outline: 0!important;
+  color: #222!important;
+}
+.contenedor_input input::placeholder{
+  color: #222!important;
+}
+.inputsearch input:focus{
+  outline: none!important;
+  box-shadow: none!important;
+  border: solid 1px #8e44ad!important;
+}
+#autoComplete_list{
+  top: 30px;
+}
+/* Rows */
+.cover{
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+.cardrows + .cardrows{
+  margin-top: 20px;
+}
+.cardrows{
+  background-color: #fff;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.saveis{
+  /* padding: 7px; */
+}
+
+/* Pagination */
+.paginationjs {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  height: 40px;
+}
+
+.paginationjs-pages {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.paginationjs-pages ul {
+  display: inline-block;
+  margin: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 0;
+  font-family: Roboto !important;
+}
+
+.paginationjs-pages ul li, .paginationjs-pages ul li a {
+  display: inline-block;
+  text-decoration: none !important;
+}
+
+.paginationjs-pages ul li a {
+  padding: 4px 7px;
+  background-color: #9b59b6;
+  color: #fff;
+}
+
+.paginationjs-pages ul li.disabled a {
+  background-color: #743190;
+  color: #ecf0f1 !important;
+}
+
+.paginationjs-pages ul li.active a {
+  background-color: #803c9c;
+  color: #fff !important;
+}
+
+.paginationjs-next a, .paginationjs-prev a {
+  position: relative;
+}
+
+.paginationjs-next a span i.notext, .paginationjs-prev a i.notext {
+  opacity: 0;
+}
+
+.paginationjs-next a span i.icons, .paginationjs-prev a span i.icons {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* views */
+.setall{
+  position: relative;
+}
+.closeart{
+  width: 100%;
+  position: sticky;
+  z-index: 99;
+  top: 15px;
+  right: 5px;
+  padding-right: 5px;
+  font-size: 20px;
+}
+.closeart i{
+  color: #fff;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.57);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.views{
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+}
+.views .view-title{
+  font-size: 30px;
+  font-family: Roboto;
+}
+.body-views{
+  padding: 12px;
+}
+.banner_ver{
+  width: 100%;
+  height: 180px;
+  background-color: #222;
+  background-size: cover;
+  background-position: center;
+}
+.cp_ver span i{
+  cursor: pointer;
+}
+.views .dcp{
+  white-space: pre-line;
+}
+.imgview{
+  width: 100%;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
