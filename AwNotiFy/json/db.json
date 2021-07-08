@@ -1,5 +1,13 @@
 {
-  "home": [],
+  "home": [
+    {
+      "id": "1",
+      "titulo": "Nanotale - Typing Chronicles",
+      "cover": "https://i.imgur.com/PV5RAm3.jpg",
+      "dcp": "Nanotale - Typing Chronicles es un juego de rol atmosférico de aventuras basado en la mecanografía que se desarrolla en un mundo vibrante y lleno de color. Sigue los pasos de Rosalinda, una archivera novata, mientras explora un mundo lejano. En su búsqueda de conocimientos irá recogiendo muestras de místicas bellezas naturales. Todo es pacífico y la guerra pertenece a un pasado remoto.\nEn las sombras se extiende un relato de magia disonante que corrompe los corazones rotos.",
+      "fecha": "30 de Junio 2021"
+    }
+  ],
   "ffCode": {},
   "ffAgenda": {}
 }
