@@ -94,7 +94,7 @@ function addnew() {
 
 // Ver
 function clickfun(text) {
-  scrolltop();
+  document.querySelector(".home_btn").click();
   // ocultar home
   var quitar_home = document.querySelector(".setall");
   quitar_home.classList.add('d-none');
@@ -201,7 +201,7 @@ $('.close_views').click(function(event) {
   // limpiar input
   document.querySelector("#autoComplete").value = '';
 
-
+  scrolltop();
 });
 
 function urlify(text) {
@@ -231,7 +231,7 @@ function validarFormulario(evento) {
   evento.preventDefault();
   var search = document.getElementById('autoComplete').value;
   if (search == 'add') {
-
+    document.querySelector(".add_btn").click();
     return;
   } else if (search.length == 0) {
 
