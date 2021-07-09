@@ -6,7 +6,7 @@ const autoCompleteJS = new autoComplete({
       // Loading placeholder text
       // document.querySelector("#autoComplete").setAttribute("placeholder", "Loading...");
       // Fetch External Data Source
-      const source = await fetch("https://lokuedo5000.github.io/appweb/awtorrentlite/db/games.json");
+      const source = await fetch("https://lokuedo5000.github.io/awmovil/AwNotiFy/json/db.json");
       const data = await source.json();
 
       // const alldata = await fetch("db-json/data.json");
@@ -15,9 +15,9 @@ const autoCompleteJS = new autoComplete({
       // Post Loading placeholder text
       // document.querySelector("#autoComplete").setAttribute("placeholder", autoCompleteJS.placeHolder);
       // Returns Fetched data
-      return data.articulos;
+      return data.home;
     },
-    key: ["nombre"],
+    key: ["titulo"],
     results: (list) => {
       // Filter duplicates
       const filteredResults = Array.from(new Set(list.map((value) => value.match))).map((food) => {
@@ -67,19 +67,6 @@ const autoCompleteJS = new autoComplete({
 
     // Mostrar Art
     clickfun(selection);
-
-    // ocultar home
-    var quitar_home = document.querySelector(".setall");
-    quitar_home.classList.add('d-none');
-
-    // ocultar view
-    var ocultar_view = document.querySelector(".views");
-    ocultar_view.classList.add('d-none');
-
-    // mostrar view
-    var ver_view = document.querySelector(".views");
-    ver_view.classList.remove('d-none');
-
     // console.log(rempla(textShort(selection, 20).toLowerCase()));
 
 
