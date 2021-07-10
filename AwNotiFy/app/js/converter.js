@@ -149,7 +149,7 @@ function clickfun(text) {
       var remhfooterNew = remhHeadeNew.replace(/-\)-/g, footer);
 
       // Rem Heade
-      var remInput = remhfooterNew.replace(/\(-/g, '<input type="text" class="col s4 validate" maxlength="4" value="');
+      var remInput = remhfooterNew.replace(/\(-/g, '<input type="text" class="col s4 validate" maxlength="4" readonly value="');
 
       // Rem Footer
       var setHtml = remInput.replace(/-\)/g, '">');
