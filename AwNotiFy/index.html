@@ -39,7 +39,8 @@
         <li class="tab"><a class="active home_btn" href="#test1" onclick="scrolltop()">Home</a></li>
         <li class="tab"><a href="#ff_view" onclick="scrolltop()">Free Fire</a></li>
         <li class="tab d-none"><a href="#json_btn" class="jsonclick">Json</a></li>
-        <li class="tab d-none"><a class="add_btn" href="#test0" onclick="addJson('add')">Add</a></li>
+        <li class="tab d-none"><a class="add_btn" href="#add_art" onclick="addJson('add')">Add</a></li>
+        <li class="tab d-none"><a class="edit_btn" href="#edit_btn" onclick="editor('view')">Edit</a></li>
       </ul>
 
     </div>
@@ -131,7 +132,7 @@
 
       </div>
     </div>
-    <div id="test0" class="col s12 bodyfileadd">
+    <div id="add_art" class="col s12 bodyfileadd">
       <div class="pd-1">
         <div class="input-field col s12">
           <select id="tipogene">
@@ -189,6 +190,73 @@
         </form>
         <div class="saves">
           <div class="btn btn-block savejson" onclick="addnew()">Save</div>
+        </div>
+      </div>
+    </div>
+    <div id="edit_btn" class="col s12">
+      <div class="input-field col s12">
+        <select id="editor_select">
+          <option value="" disabled selected>Select</option>
+        </select>
+        <label>Seleccionar Articulo</label>
+      </div>
+      <div class="pd-1">
+        <div class="input-field col s12">
+          <select id="tipo_edit">
+            <option value="" disabled selected>Categoria</option>
+            <option value="ff">Free Fire</option>
+            <option value="juegos">Juegos</option>
+            <option value="noticias">Noticias</option>
+            <option value="gameplays">GamePlays</option>
+          </select>
+          <label>Tipo de articulo</label>
+        </div>
+        <form class="form_edit">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="id_edit" type="text" name="id" class="validate" placeholder="...">
+              <label for="id_edit">ID</label>
+            </div>
+            <div class="input-field col s6 d-none">
+              <input id="tipo_edit_ip" type="text" name="tipo" class="validate" placeholder="...">
+              <label for="tipo_edit_ip">Categoria</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="titulo_edit" type="text" name="titulo" class="validate" placeholder="...">
+              <label for="titulo_edit">Titulo</label>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="cover_edit" type="text" name="cover" class="validate" placeholder="...">
+              <label for="cover_edit">Cover</label>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="input-field col s12">
+              <textarea id="dcp_edit" class="materialize-textarea" name="dcp" placeholder="{...}"></textarea>
+              <label for="dcp_edit">Descripcion</label>
+            </div>
+
+          </div>
+
+          <div class="row">
+
+            <div class="input-field col s12">
+              <input id="fecha_edit" type="text" name="fecha" class="validate" placeholder="...">
+              <label for="fecha_edit">Fecha</label>
+            </div>
+
+          </div>
+
+
+        </form>
+        <div class="saves">
+          <div class="btn btn-block saveedit" onclick="editor('saveedit')">Save</div>
         </div>
       </div>
     </div>
