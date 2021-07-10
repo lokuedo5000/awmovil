@@ -249,6 +249,113 @@ function urlify(text) {
   // return text.replace(urlRegex, '<a href="$1">$1</a>')
 }
 
+// edit
+function editor(text) {
+  // Get Json
+  const addView = document.querySelector("#jsonfile").value;
+  let parseJson = JSON.parse(addView);
+
+
+  if (text == 'view') {
+    scrolltop();
+    // Default Select
+    var df_sl = `<option value="" disabled selected>Select</option>`;
+    $('#editor_select').html(df_sl + setselect(parseJson.home));
+    $('#editor_select').formSelect();
+  }else if (text == 'saveedit') {
+
+
+    // GET FORM
+    var formSerialize = formElement => {
+      const values = {};
+      const inputs = formElement.elements;
+
+      for (let i = 0; i < inputs.length; i++) {
+        values[inputs[i].name] = inputs[i].value;
+      }
+      return values;
+    }
+
+    // Save
+    const addSave = document.querySelector(".form_edit");
+    var getForm = formSerialize(addSave);
+
+    // Eliminar
+    for (var i = 0; i < parseJson.home.length; i++) {
+      if (parseJson.home[i].id == getForm.id) {
+        parseJson.home.splice(i, 1);
+        break;
+      }
+    }
+
+    // Add New
+    parseJson.home.push(getForm);
+
+    parseJson.home.sort(sort_by('id', false, parseInt));
+
+
+    document.querySelector("#jsonfile").value = JSON.stringify(parseJson, null, 2);
+
+    // reset form
+    // document.querySelector(".form_edit").reset();
+    $('.form_edit input').val('');
+
+    // Select Option
+    $('#tipo_edit').val('');
+    $('#tipo_edit').formSelect();
+
+    // Dcp
+    $('#dcp_edit').val('');
+    M.textareaAutoResize($('#dcp_edit'));
+
+    scrolltop();
+
+    document.querySelector(".jsonclick").click();
+
+  }
+}
+/* Get Info art */
+$('#editor_select').change(function(event) {
+  // Get Json
+  const addView = document.querySelector("#jsonfile").value;
+  let parseJson = JSON.parse(addView);
+  var filter = parseJson.home.filter(all => all.id == $(this).val());
+
+
+  $('#titulo_edit').val(filter[0].titulo);
+  $('#id_edit').val(filter[0].id);
+
+  // Select Option
+  $('#tipo_edit').val(filter[0].tipo);
+  $('#tipo_edit').formSelect();
+
+  // cover
+  $('#cover_edit').val(filter[0].cover);
+
+  // Dcp
+  $('#dcp_edit').val(filter[0].dcp);
+  M.textareaAutoResize($('#dcp_edit'));
+
+  // tipo
+  $('#tipo_edit_ip').val($('#tipo_edit').val());
+
+
+  // cover
+  $('#fecha_edit').val(filter[0].fecha);
+
+});
+
+/* Get Art */
+function setselect(text) {
+  var d = "";
+  for (var get in text) {
+    d += `<option value="${text[get].id}">${text[get].titulo}</option>`;
+  }
+  return d;
+}
+
+// Search
+
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("searchform").addEventListener('submit', validarFormulario);
 });
@@ -258,6 +365,9 @@ function validarFormulario(evento) {
   var search = document.getElementById('autoComplete').value;
   if (search == 'add') {
     document.querySelector(".add_btn").click();
+    return;
+  } else if (search == 'edit') {
+    document.querySelector(".edit_btn").click();
     return;
   } else if (search.length == 0) {
 
