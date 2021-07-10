@@ -73,7 +73,7 @@
       <div class="setall">
         <div class="rowsall" id="games">
 
-          <div class="card cardrows">
+          <!-- <div class="card cardrows">
             <div class="card-image waves-effect waves-block waves-light">
               <div class="activator cover" style="background-image: url(https://i.imgur.com/D1ah838.jpg);">
 
@@ -89,7 +89,7 @@
                 Xbox
                 Live Arcade y el 3 de septiembre de 2013 para Steam y PlayStation Network</p>
             </div>
-          </div>
+          </div> -->
 
         </div>
 
@@ -110,16 +110,31 @@
     </div>
     <div id="test0" class="col s12 bodyfileadd">
       <div class="pd-1">
+        <div class="input-field col s12">
+          <select id="tipogene">
+            <option value="" disabled selected>Categoria</option>
+            <option value="ff">Free Fire</option>
+            <option value="juegos">Juegos</option>
+            <option value="noticias">Noticias</option>
+            <option value="gameplays">GamePlays</option>
+          </select>
+          <label>Tipo de articulo</label>
+        </div>
         <form class="form_new">
           <div class="row">
             <div class="input-field col s6">
               <input id="id" type="text" name="id" class="validate" placeholder="...">
               <label for="id">ID</label>
             </div>
+            <div class="input-field col s6 d-none">
+              <input id="tipo" type="text" name="tipo" class="validate" placeholder="...">
+              <label for="tipo">Categoria</label>
+            </div>
             <div class="input-field col s6">
               <input id="titulo" type="text" name="titulo" class="validate">
               <label for="titulo">Titulo</label>
             </div>
+
           </div>
 
           <div class="row">
