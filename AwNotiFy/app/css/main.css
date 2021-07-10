@@ -319,7 +319,9 @@ box-shadow: 0px 0px 15px -9px rgba(0,0,0,0.45);
   background-color: #eee;
   outline: none;
 }
-
+.sidenavz{
+  z-index: 9999;
+}
 /* SCROLL WEB */
 ::-webkit-scrollbar {
   width: 5px;
