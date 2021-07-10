@@ -59,7 +59,11 @@ function addJson(tipo) {
 
 }
 
-
+// select genero
+$('#tipogene').change(function(event) {
+  var tipo = $(this).val();
+  $('#tipo').val(tipo)
+});
 
 // add new json
 function addnew() {
@@ -77,6 +81,8 @@ function addnew() {
   // Save
   const addSave = document.querySelector(".form_new");
   var getForm = formSerialize(addSave);
+
+
 
   const addView = document.querySelector("#jsonfile").value;
 
