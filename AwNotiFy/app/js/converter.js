@@ -123,7 +123,7 @@ function clickfun(text) {
       $('.banner_ver').attr('style', 'background-image: url(' + filter[0].cover + ');');
 
       // dcp
-      $('.dcp').html(remplaNor(urlify($('.dcp').html())));
+      $('.dcp').html(remplaNor(urlify(filter[0].dcp)));
 
       // add codes
       var ver_data = $('.dcp').html();
@@ -200,6 +200,8 @@ $('.close_views').click(function(event) {
 
   // limpiar input
   document.querySelector("#autoComplete").value = '';
+
+  document.querySelector(".dcp").innerHTML = '';
 
   scrolltop();
 });
