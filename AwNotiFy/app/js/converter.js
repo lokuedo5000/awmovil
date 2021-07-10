@@ -25,6 +25,7 @@ fetch(url)
     // Json add Datos
     document.querySelector("#jsonfile").value = JSON.stringify(out, null, 2);
 
+    // Home
     $('.setall').pagination({ // you call the plugin
       dataSource: out.home.sort(sort_by('id', true, parseInt)), // pass all the data
       pageSize: 8, // put how many items per page you want
@@ -34,6 +35,24 @@ fetch(url)
         var wrapper = $('.setall #games').empty();
         $.each(data, function(i, f) {
           $('.setall #games').append(rows(f.titulo, f.fecha, f.cover, f.dcp));
+        });
+      }
+    });
+
+    // Free Fire
+    // tipo
+    var codeff = out.home.filter(all => all.tipo == 'ff');
+
+    // Lista Free Fire
+    $('.setallff').pagination({ // you call the plugin
+      dataSource: codeff.sort(sort_by('id', true, parseInt)), // pass all the data
+      pageSize: 8, // put how many items per page you want
+      callback: function(data, pagination) {
+        // data will be chunk of your data (json.Product) per page
+        // that you need to display
+        var wrapper = $('.setallff #gamesff').empty();
+        $.each(data, function(i, f) {
+          $('.setallff #gamesff').append(rows(f.titulo, f.fecha, f.cover, f.dcp));
         });
       }
     });
@@ -175,7 +194,6 @@ function rows(name, fecha, cover, dcp) {
   return `<div class="card cardrows">
       <div class="card-image waves-effect waves-block waves-light">
         <div class="activator cover" style="background-image: url(${cover});">
-
         </div>
       </div>
       <div class="card-content">
