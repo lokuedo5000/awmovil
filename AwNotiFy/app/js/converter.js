@@ -82,7 +82,7 @@ function addnew() {
   const addSave = document.querySelector(".form_new");
   var getForm = formSerialize(addSave);
 
-  getForm.titulo = getForm.titulo + '#' + getForm.id;
+  getForm.titulo = getForm.titulo + ' #' + getForm.id;
 
   const addView = document.querySelector("#jsonfile").value;
 
